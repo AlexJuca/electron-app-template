@@ -1,0 +1,31 @@
+{
+  "name": "electron-app-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "webpack --mode development --config ./webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alexjuca",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "electron": "^25.0.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "postcss-loader": "^7.3.2",
+    "style-loader": "^3.3.3",
+    "tailwindcss": "^3.3.2",
+    "webpack-cli": "^5.1.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-react": "^7.22.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
