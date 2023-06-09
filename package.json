@@ -4,13 +4,20 @@
   "description": "",
   "main": "app/src/main.js",
   "scripts": {
-    "start": "electron .",
-    "dev": "webpack --mode development --config ./webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "dev": "webpack --mode development --config ./webpack.config.js && electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "alexjuca",
   "license": "ISC",
   "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
     "electron": "^25.0.1",
@@ -19,6 +26,9 @@
     "postcss-loader": "^7.3.2",
     "style-loader": "^3.3.3",
     "tailwindcss": "^3.3.2",
+    "ts-loader": "^9.4.3",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
+    "typescript": "^5.1.3",
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
@@ -29,6 +39,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
+    "electron-squirrel-startup": "^1.0.0",
     "lucide-react": "^0.236.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

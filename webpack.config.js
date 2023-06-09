@@ -1,11 +1,18 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin').TsconfigPathsPlugin;
 
 module.exports = {
     entry: "./app/src/index.jsx",
     output: {
         path: path.resolve(__dirname, "app/dist"),
         filename: "bundle.js"
+    },
+    resolve: {
+        extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+        plugins: [
+            new TsconfigPathsPlugin()
+        ]
     },
     module: {
         rules: [
@@ -14,9 +21,6 @@ module.exports = {
                 test: /\.jsx?$/,
                 include: [path.resolve(__dirname, "app/src")],
                 loader: "babel-loader",
-                resolve: {
-                    extensions: [".js", ".jsx", ".json"]
-                }
             },
             {
                 // loads .html files
